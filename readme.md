@@ -1,124 +1,145 @@
-## Cliente
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
+<a name="readme-top"></a>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/angiejo21/VOCI">
+    <img src="logo-voci.png" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">VOCI | Typescript </h3>
+
+  <p align="center">
+    A platform for gender equality 
+  </p>
+
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+</div>
 
 <details>
-<summary>Voci</summary>
-
-### Nome
-
-Voci
-
-### Da dove nasce l'idea
-
-Si sente la la mancanza di voci femminili nel panorama europeo, così le fondatrici hanno voluto rompere questo silenzio.
-
-### Vision
-
-Contribuire al raggiungimento della parità di genere.
-
-### Mission
-
-Dare voce alle donne che stanno cambiando il mondo con piccoli e grandi passi.
-
-### Chi siamo
-
-Voci è un media brand nato per colmare il vuoto di una narrazione mediatica spesso con un'impronta che non dà spazio alle voce delle donne. Qui si cerca la parità, la condivisione delle storie di donne che stanno lottando per arrivarci.
-
-Il team è composto da donne e uomini che credono nella parità e nella divulgazione dei valori di uguaglianza e rispetto reciproco.
-
-###### Come funziona?
-
-Voci divulga sul blog, sui social e su YouTube notizie, narrazioni e punti di vista differenti.
-
-Vengono realizzati principalmente video, interviste e servizi, a volte sponsorizzati da grandi aziende o istituzioni in linea con i loro valori. I social sono il veicolo più forte, dove si aprono dibattiti e confronti e dove c’è una maggiore diffusione.
-
+  <summary>Index</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#the-assignment">The assignment</a></li>
+        <li><a href="#features">Requirements</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting started</a>
+      <ul>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
 </details>
 
-## Struttura
+<!-- ABOUT THE PROJECT -->
 
-### Interfacce
+## About The Project
 
-<details>
-<summary> Interfaccia IProfessionistaMedia </summary>
-</br>
+VOCI is the final project for [start2impact](https://www.start2impact.it/)'s module "Typescript" in the Full-stack developer course.
 
-_Definisci un'interfaccia IProfessionistaMedia per rappresentare le donne che lavorano o aspirano a lavorare nei media.Segui queste indicazioni:_
+### The assignment:
 
-#### Proprietà:
+Develop a TypeScript system designed for an online media company that promotes gender equality by facilitating interaction between media professionals and platforms and by providing training courses and mentorships.
 
-- [ ] nome
-- [ ] cognome
-- [ ] specializzazione (giornalismo, regia, produzione, ecc.)
-- [ ] esperienza
-- [ ] interessi
+### Features:
 
-#### Metodo:
+- The project requires no frontend, but must implement the interfaces _IProfessionistaMedia_, _IProgrammaFormazione_, and _IPiattaforma_ .
+- A professional can enroll or be enrolled in a training course/mentorship.
+- A media platform can publish content created by a professional.
 
-per iscriversi a un programma di formazione.
+#### I created a working sample of the code on CodePen, you can check the implementation opening the console with F12: [VOCI CodePen](https://codepen.io/angiejo21/pen/ZENgNyP).
 
-- [ ] _partecipaProgramma(programma: IProgrammaFormazione): void_
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-</details>
+## Getting started
 
-<details>
-<summary>Interfaccia IProgrammaFormazione</summary>
-</br>
+### Requirements
 
-_Definisci un'interfaccia IProgrammaFormazione per rappresentare i programmi di formazione, mentorship e sviluppo professionale offerti da Voci. Segui queste indicazioni:_
+- Node
+- Typescript
 
-#### Proprietà:
+### Structure
 
-- [ ] titolo
-- [ ] descrizione
-- [ ] ambito di specializzazione
-- [ ] durata
-- [ ] elenco partecipanti (IProfessionistaMedia[])
+```sh
+└── VOCI/
+    ├── package-lock.json
+    ├── package.json
+    ├── src
+    │   ├── class.ts     // implements classes
+    │   ├── index.ts     // sample usage
+    │   └── interface.ts // definition of types and interfaces
+    └── tsconfig.json    // compiler configuration
 
-#### Metodo:
+```
 
-per aggiungere una professionista all'elenco dei partecipanti.
+### Installation
 
-- [ ] _aggiungiPartecipante(professionista: IProfessionistaMedia): void_
+1. Clone the VOCI repository:
 
-</details>
+```sh
+git clone https://github.com/angiejo21/VOCI
+```
 
-<details>
-<summary>Interfaccia IPiattaforma</summary>
-</br>
+2. Change to the project directory:
 
-_Definisci un'interfaccia IPiattaforma per rappresentare le piattaforme di pubblicazione (sia tradizionali che digitali) che collaborano con il media per promuovere contenuti che rispecchiano la diversità e la parità di genere. Segui queste indicazioni:_
+```sh
+cd VOCI
+```
 
-#### Proprietà:
+3. Install the dependencies:
 
-- [ ] nome
-- [ ] tipo (stampato, online, audiovisivo)
-- [ ] descrizione
-- [ ] categorie di contenuto
+```sh
+npm install
+```
 
-#### Metodo:
+4. Compile the TypeScript code:
 
-per pubblicare il lavoro di una professionista media.
+```sh
+npm build
+```
 
-- [ ] _pubblicaContenuto(professionista: IProfessionistaMedia, contenuto: string): void_
+5. Run the code:
 
-</details>
+```sh
+npm start
+```
 
-### Classi
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Implementa le classi ProfessionistaMedia, ProgrammaFormazione, e Piattaforma che rispettivamente implementano le interfacce IProfessionistaMedia, IProgrammaFormazione, e IPiattaforma.
+<!-- LICENSE -->
 
-- Classe ProfessionistaMedia: gestisce le informazioni sulle professioniste dei media, inclusa la loro partecipazione ai programmi di formazione.
-- Classe ProgrammaFormazione: gestisce i dettagli dei programmi di formazione, mentorship e sviluppo professionale, inclusi gli iscritti.
-- Classe Piattaforma: rappresenta le piattaforme di pubblicazione che si impegnano a promuovere contenuti diversi e inclusivi.
+## License
 
-Logica di collegamento
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-- Nella classe ProfessionistaMedia, il metodo partecipaProgramma consente alle professioniste di iscriversi ai programmi di formazione offerti da Voci.
-- Nella classe ProgrammaFormazione, il metodo aggiungiPartecipante facilita l'aggiunta di nuove professioniste ai programmi di sviluppo.
-- Nella classe Piattaforma, il metodo pubblicaContenuto permette alle piattaforme di collaborare con le professioniste dei media per pubblicare lavori che promuovono la parità di genere e la diversità nei contenuti.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Istanziare e testare
+<!-- CONTACT -->
 
-- [ ] Istanzia alcuni oggetti ProfessionistaMedia per rappresentare donne che lavorano o aspirano a lavorare nel settore dei media.
-- [ ] Istanzia oggetti ProgrammaFormazione per rappresentare i diversi programmi offerti da Voci, focalizzati su mentorship, sviluppo professionale e specializzazione tecnica.
-- [ ] Istanzia oggetti Piattaforma per rappresentare vari canali e piattaforme (sia tradizionali sia digitali) che collaborano con Voci per promuovere contenuti che riflettono la diversità e la parità di genere.
-- [ ] Verifica il funzionamento della logica di collegamento tra professioniste dei media, programmi di formazione, e piattaforme di pubblicazione.
+## Contact
+
+Angela Bellò - [Portfolio](https://bello.codes)
+
+Project Link: [https://github.com/angiejo21/VOCI](https://github.com/angiejo21/VOCI)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[license-shield]: https://img.shields.io/github/license/angiejo21/VOCI.svg?style=for-the-badge
+[license-url]: https://github.com/angiejo21/VOCI/blob/master/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/angelabello/

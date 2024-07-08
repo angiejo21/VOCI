@@ -1,19 +1,16 @@
 {
   "name": "7-project-voci",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "start": "node dist/index.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.5.3",
-    "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4"
+    "typescript": "^5.5.3"
   }
 }
