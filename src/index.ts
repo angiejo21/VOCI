@@ -1,94 +1,91 @@
-import { ProfessionistaMedia, ProgrammaFormazione, Piattaforma } from "./class";
-import { TContenuto, TMediaPiattaforma, TSpecializzazione } from "./interface";
+import { MediaProfessional, TrainingProgram, Platform } from "./class";
+import { TContent, TMediaPlatform, TSpecialty } from "./interface";
 
-const professionista1 = new ProfessionistaMedia(
+const professional1 = new MediaProfessional(
   "Giulia",
   "Bianchi",
-  TSpecializzazione.giornalismo,
+  TSpecialty.journalism,
   5,
-  ["politica", "narrativa", "viaggi"]
+  ["politics", "fiction", "travel"]
 );
-const professionista2 = new ProfessionistaMedia(
+const professional2 = new MediaProfessional(
   "Rachele",
   "Neri",
-  TSpecializzazione.regia,
+  TSpecialty.direction,
   3,
-  ["arte", "viaggi", "cucina"]
+  ["art", "travel", "cooking"]
 );
-const professionista3 = new ProfessionistaMedia(
+const professional3 = new MediaProfessional(
   "Lorenzo",
   "Rossi",
-  TSpecializzazione.editoria,
+  TSpecialty.publishing,
   10,
-  ["sport", "narrativa", "cucina"]
+  ["sport", "fiction", "cooking"]
 );
 
-const programma1 = new ProgrammaFormazione(
-  "Il genere nella narrazione quotidiana",
-  "Ragioneremo per sviluppare insieme una rielaborazione del lessico giornalistico in una chiave neutrale ed inclusiva",
-  TSpecializzazione.giornalismo,
+const program1 = new TrainingProgram(
+  "Gender in everyday narrative",
+  "We will reason together to develop a reworking of the journalistic lexicon in a neutral and inclusive key",
+  TSpecialty.journalism,
   5
 );
-const programma2 = new ProgrammaFormazione(
-  "Ragionare sul rifiuto",
-  "Usare un NO come punto di partenza.",
-  TSpecializzazione.produzione,
+const program2 = new TrainingProgram(
+  "Reasoning about rejection",
+  "Use NO as a starting point.",
+  TSpecialty.production,
   6
 );
-const programma3 = new ProgrammaFormazione(
-  "Intersezionalità. Oltre la parola.",
-  "Affrontare la sfida della diversità nell'ambiente di lavoro come uno stimolo alla crescita e alla ricerca di nuove fasce di pubblico",
-  TSpecializzazione.editoria,
+const program3 = new TrainingProgram(
+  "Intersectionality. Beyond the word.",
+  "Addressing the challenge of diversity in the workplace as a stimulus for growth and the search for new audiences",
+  TSpecialty.publishing,
   14
 );
 
-const piattaforma1 = new Piattaforma(
+const platform1 = new Platform(
   "Fiere",
-  TMediaPiattaforma.online,
-  "Social media con focus su femminismo ed intersezionalità",
-  [TContenuto.podcast, TContenuto.intervista]
+  TMediaPlatform.online,
+  "Social media with a focus on feminism and intersectionality",
+  [TContent.podcast, TContent.interview]
 );
-const piattaforma2 = new Piattaforma(
+const platform2 = new Platform(
   "Il mondo delle idee",
-  TMediaPiattaforma.stampato,
-  "Casa editrice indipendente",
-  [TContenuto.libro, TContenuto.articolo]
+  TMediaPlatform.print,
+  "Independent publisher",
+  [TContent.book, TContent.article]
 );
-const piattaforma3 = new Piattaforma(
+const platform3 = new Platform(
   "Riverbend Channel",
-  TMediaPiattaforma.audiovisivo,
-  "Canale di cultura e viaggi",
-  [TContenuto.video, TContenuto.vlog]
+  TMediaPlatform.audiovisual,
+  "Culture and travel channel",
+  [TContent.video, TContent.vlog]
 );
 
-professionista1.partecipaProgramma(programma1);
-professionista2.partecipaProgramma(programma2);
+professional1.enrollInProgram(program1);
+professional2.enrollInProgram(program2);
 
-programma2.aggiungiPartecipante(professionista3);
-programma3.aggiungiPartecipante(professionista3);
+program2.addPartecipant(professional3);
+program3.addPartecipant(professional3);
 
-console.log(programma1.elencoPartecipanti);
-console.log(programma2.elencoPartecipanti);
-console.log(programma3.elencoPartecipanti);
+console.log(program1.partecipants);
+console.log(program2.partecipants);
+console.log(program3.partecipants);
 
-piattaforma1.pubblicaContenuto(
-  professionista1,
-  "Intervista a AOC. Where are we headed?"
+platform1.publishContent(
+  professional1,
+  "Interviewing AOC. Where are we headed?"
 );
-piattaforma2.pubblicaContenuto(
-  professionista3,
-  "Senza cipolla, anche i maschi piangono."
+platform2.publishContent(professional3, "Without onion, even men cry.");
+platform3.publishContent(professional2, "Two-spirit people");
+platform1.publishContent(
+  professional3,
+  "Woman's Title. A weekly podcast about books."
 );
-piattaforma3.pubblicaContenuto(professionista2, "Two-spirit people");
-piattaforma1.pubblicaContenuto(
-  professionista3,
-  "Titolo di donna. Un podcast settimanale sui libri."
+platform2.publishContent(
+  professional1,
+  "School and reality, a complex relationship."
 );
-piattaforma2.pubblicaContenuto(
-  professionista1,
-  "La scuola ed il reale, un rapporto complesso."
-);
-piattaforma3.pubblicaContenuto(
-  professionista2,
-  "Una settimana dietro le sbarre, vlog dal carcere della Giudecca"
+platform3.publishContent(
+  professional2,
+  "A week behind bars, vlog from the Giudecca prison."
 );

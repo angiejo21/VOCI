@@ -55,8 +55,8 @@ Develop a TypeScript system designed for an online media company that promotes g
 
 ### Features:
 
-- The project requires no frontend, but must implement the interfaces _IProfessionistaMedia_, _IProgrammaFormazione_, and _IPiattaforma_ .
-- A professional can enroll or be enrolled in a training course/mentorship.
+- The project requires no frontend, but must implement the interfaces _IMediaProfessional_, _ITrainingProgram_, and _IPlatform_ .
+- A professional can enroll or be enrolled in a training program/course/mentorship.
 - A media platform can publish content created by a professional.
 
 #### I created a working sample of the code on CodePen, you can check the implementation opening the console with F12: [VOCI CodePen](https://codepen.io/angiejo21/pen/ZENgNyP).

@@ -1,90 +1,87 @@
 import {
-  IPiattaforma,
-  IProfessionistaMedia,
-  IProgrammaFormazione,
-  TContenuto,
-  TMediaPiattaforma,
-  TSpecializzazione,
+  IPlatform,
+  IMediaProfessional,
+  ITrainingProgram,
+  TContent,
+  TMediaPlatform,
+  TSpecialty,
 } from "./interface";
 
-export class ProfessionistaMedia implements IProfessionistaMedia {
-  nome: string;
-  cognome: string;
-  specializzazione: TSpecializzazione;
-  esperienza: number;
-  interessi: string[];
+export class MediaProfessional implements IMediaProfessional {
+  firstName: string;
+  lastName: string;
+  specialty: TSpecialty;
+  experience: number;
+  interests: string[];
 
   constructor(
-    nome: string,
-    cognome: string,
-    specializzazione: TSpecializzazione,
-    esperienza: number,
-    interessi: string[]
+    firstName: string,
+    lastName: string,
+    specialty: TSpecialty,
+    experience: number,
+    interests: string[]
   ) {
-    this.nome = nome;
-    this.cognome = cognome;
-    this.specializzazione = specializzazione;
-    this.esperienza = esperienza;
-    this.interessi = interessi;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.specialty = specialty;
+    this.experience = experience;
+    this.interests = interests;
   }
 
-  partecipaProgramma(programma: IProgrammaFormazione): void {
-    programma.aggiungiPartecipante(this);
+  enrollInProgram(program: ITrainingProgram): void {
+    program.addPartecipant(this);
   }
 }
 
-export class ProgrammaFormazione implements IProgrammaFormazione {
-  titolo: string;
-  descrizione: string;
-  specializzazione: TSpecializzazione;
-  durata: number;
-  elencoPartecipanti: IProfessionistaMedia[];
+export class TrainingProgram implements ITrainingProgram {
+  title: string;
+  description: string;
+  specialty: TSpecialty;
+  duration: number;
+  partecipants: IMediaProfessional[];
 
   constructor(
-    titolo: string,
-    descrizione: string,
-    specializzazione: TSpecializzazione,
-    durata: number,
-    elencoPartecipanti: IProfessionistaMedia[] = []
+    title: string,
+    description: string,
+    specialty: TSpecialty,
+    duration: number,
+    partecipants: IMediaProfessional[] = []
   ) {
-    this.titolo = titolo;
-    this.descrizione = descrizione;
-    this.specializzazione = specializzazione;
-    this.durata = durata;
-    this.elencoPartecipanti = elencoPartecipanti;
+    this.title = title;
+    this.description = description;
+    this.specialty = specialty;
+    this.duration = duration;
+    this.partecipants = partecipants;
   }
-  aggiungiPartecipante(professionista: IProfessionistaMedia): void {
-    this.elencoPartecipanti.push(professionista);
+  addPartecipant(professional: IMediaProfessional): void {
+    this.partecipants.push(professional);
     console.log(
-      `${professionista.nome} ${professionista.cognome} è stato aggiunto a al programma ${this.titolo}`
+      `${professional.firstName} ${professional.lastName} has been added to the program: ${this.title}`
     );
   }
 }
 
-export class Piattaforma implements IPiattaforma {
-  nome: string;
-  tipo: TMediaPiattaforma;
-  descrizione: string;
-  categorieContenuti: TContenuto[];
+export class Platform implements IPlatform {
+  name: string;
+  type: TMediaPlatform;
+  description: string;
+  contentTypes: TContent[];
 
   constructor(
-    nome: string,
-    tipo: TMediaPiattaforma,
-    descrizione: string,
-    categorieContenuti: TContenuto[]
+    name: string,
+    type: TMediaPlatform,
+    description: string,
+    contentTypes: TContent[]
   ) {
-    this.nome = nome;
-    this.tipo = tipo;
-    this.descrizione = descrizione;
-    this.categorieContenuti = categorieContenuti;
+    this.name = name;
+    this.type = type;
+    this.description = description;
+    this.contentTypes = contentTypes;
   }
 
-  pubblicaContenuto(
-    professionista: IProfessionistaMedia,
-    contenuto: string
-  ): void {
+  publishContent(professional: IMediaProfessional, content: string): void {
     console.log(
-      `${this.nome} ha pubblicato "${contenuto}" di ${professionista.nome} ${professionista.cognome}`
+      `${this.name} published "${content}" by ${professional.firstName} ${professional.lastName}`
     );
   }
 }
