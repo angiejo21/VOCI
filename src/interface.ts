@@ -1,21 +1,21 @@
 export enum TSpecialty {
-  journalism,
-  publishing,
-  direction,
-  production,
+  journalism = "journalism",
+  publishing = "publishing",
+  direction = "direction",
+  production = "production",
 }
 export enum TMediaPlatform {
-  print,
-  online,
-  audiovisual,
+  print = "print",
+  online = "online",
+  audiovisual = "audiovisual",
 }
 export enum TContent {
-  article,
-  interview,
-  book,
-  podcast,
-  vlog,
-  video,
+  article = "article",
+  interview = "interview",
+  book = "book",
+  podcast = "podcast",
+  vlog = "vlog",
+  video = "video",
 }
 
 // people that warks or wants to work in the media
